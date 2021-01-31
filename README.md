@@ -21,16 +21,15 @@ Está actualmente definido con el nombre (SSID) y la password de la red proporci
 
 Librerias usadas:
 
-Downloaded from Arduino Library Manager:
+Downloaded from Arduino Library Manager: 
+ArduinoHttpClient by Arduino V0.3.2 
+Adafruit BusIO by Adafruit V1.7.1 
+Adafruit GFX Library by Adafruit V1.10.4 
+Arduino Json by Benoit Blanchon V6.9.1 
+Grove - Air Quality Sensor by Seeed Studio V1.0.1 
+PubSubClient by Nick O'Leary V2.7.0 
+ThingsBoard by ThingsBoard Team V0.2.0 
 
-ArduinoHttpClient by Arduino V0.3.2
-Adafruit BusIO by Adafruit V1.7.1
-Adafruit GFX Library by Adafruit V1.10.4
-Arduino Json by Benoit Blanchon V6.9.1
-Grove - Air Quality Sensor by Seeed Studio V1.0.1
-PubSubClient by Nick O'Leary V2.7.0
-ThingsBoard by ThingsBoard Team V0.2.0
-
-Downloaded from GitHub
-Max72xxPanel by markruys https://github.com/markruys/arduino-Max72xxPanel
-SVM30 by paulvha V1.3 https://github.com/paulvha/svm30
+Downloaded from GitHub 
+Max72xxPanel by markruys https://github.com/markruys/arduino-Max72xxPanel 
+SVM30 by paulvha V1.3 https://github.com/paulvha/svm30 
