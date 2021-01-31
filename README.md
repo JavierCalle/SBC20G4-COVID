@@ -32,4 +32,4 @@ ThingsBoard by ThingsBoard Team V0.2.0
 
 Downloaded from GitHub
 Max72xxPanel by markruys https://github.com/markruys/arduino-Max72xxPanel
-SVM30 by paulvha https://github.com/paulvha/svm30
+SVM30 by paulvha V1.3 https://github.com/paulvha/svm30
