@@ -22,6 +22,7 @@ Está actualmente definido con el nombre (SSID) y la password de la red proporci
 Librerias usadas:
 
 Downloaded from Arduino Library Manager:
+
 ArduinoHttpClient by Arduino V0.3.2
 Adafruit BusIO by Adafruit V1.7.1
 Adafruit GFX Library by Adafruit V1.10.4
