@@ -264,7 +264,7 @@ void setup() {//----------------------------------------------------------------
 //----------------------------------------------------------------LOOP--------------------------------------
 void loop() {
   delay(1000);
-  /*
+  
   // Reconnect to WiFi, if needed
   if (WiFi.status() != WL_CONNECTED) {
     reconnect();
@@ -298,7 +298,7 @@ void loop() {
     Serial.println("Subscribe done");
     subscribed = true;
   }
-    */
+    
   duration = pulseIn(dust, LOW);
   lowpulseoccupancy = lowpulseoccupancy+duration;
 
@@ -504,18 +504,18 @@ void func_Matrix_LED( void * pvParameters ){ //CAMBIAR VALORES------------------
       }
     }
     
-    if(v.CO2eq > 50){
+    if(v.CO2eq > 1000){
       exclamationBlinkMatrix(3);
       stringo = "Niveles de CO2 altos ";
       StringWarningsMatrix(stringo);
       StringWarningsMatrix("Abrir ventanas ");
     }
-    if(val > 500){ //val variable del sonido
+    if(val > 750){ //val variable del sonido
       exclamationBlinkMatrix(1);
       stringo = "Mucho ruido ";
       StringWarningsMatrix(stringo);
     }
-    if(concentration > 18000){
+    if(concentration > 8000){
       stringo = "Concentracion de polvo alta ";
       StringWarningsMatrix(stringo);
     }
