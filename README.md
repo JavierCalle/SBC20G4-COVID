@@ -16,3 +16,20 @@ Con este proyecto se pretende implementar un sistema que detecte presencia y que
 Este dispositorio dispone de las librerias utilizadas y una imagen de la disposición de los pines utilizados por los sensores en la placa ESP32.
 
 Está actualmente definido con el nombre (SSID) y la password de la red proporcionado por los profesores Universidad para la realización del proyecto de la asignatura (Sistemas Basados en Computador). Además se está enviando datos al Thingsboard con una cuenta de la Universidad.
+
+------------------------------------
+
+Librerias usadas:
+
+Downloaded from Arduino Library Manager:
+ArduinoHttpClient by Arduino V0.3.2
+Adafruit BusIO by Adafruit V1.7.1
+Adafruit GFX Library by Adafruit V1.10.4
+Arduino Json by Benoit Blanchon V6.9.1
+Grove - Air Quality Sensor by Seeed Studio V1.0.1
+PubSubClient by Nick O'Leary V2.7.0
+ThingsBoard by ThingsBoard Team V0.2.0
+
+Downloaded from GitHub
+Max72xxPanel by markruys https://github.com/markruys/arduino-Max72xxPanel
+SVM30 by paulvha https://github.com/paulvha/svm30
