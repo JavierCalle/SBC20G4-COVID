@@ -351,7 +351,7 @@ void loop() {
       Serial.println("LOUD NOISES SENSOR");
       tb.sendTelemetryFloat("Loudness", val);
       
-      if (val > 500) //Valor arbitrario
+      if (val > 750) //Valor arbitrario
       {
         digitalWrite (GreenLed, HIGH);
         Serial.println("LOUD NOISES!!!");
