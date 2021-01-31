@@ -100,69 +100,8 @@ void IRAM_ATTR detectsMovement()
 //----------------------------------------------------------
 // Main application loop delay
 int quant = 20;
-/*
-// Initial period of LED cycling.
-int led_delay = 1000;
-// Period of sending a temperature/humidity data.
-int send_delay = 2000;
 
-// Time passed after LED was turned ON, milliseconds.
-int led_passed = 0;
-// Time passed after temperature/humidity data was sent, milliseconds.
-int send_passed = 0;
 
-// Set to true if application is subscribed for the RPC messages.
-bool subscribed = false;
-// LED number that is currenlty ON.
-int current_led = 0;
-
-// Processes function for RPC call "setValue"
-// RPC_Data is a JSON variant, that can be queried using operator[]
-// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-RPC_Response processDelayChange(const RPC_Data &data)
-{
-  Serial.println("Received the set delay RPC method");
-
-  // Process data
-
-  led_delay = data;
-
-  Serial.print("Set new delay: ");
-  Serial.println(led_delay);
-
-  return RPC_Response(NULL, led_delay);
-}
-
-// Processes function for RPC call "getValue"
-// RPC_Data is a JSON variant, that can be queried using operator[]
-// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-RPC_Response processGetDelay(const RPC_Data &data)
-{
-  Serial.println("Received the get value method");
-
-  return RPC_Response(NULL, led_delay);
-}
-
-// Processes function for RPC call "setGpioStatus"
-// RPC_Data is a JSON variant, that can be queried using operator[]
-// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-RPC_Response processSetGpioState(const RPC_Data &data)
-{
-  Serial.println("Received the set GPIO RPC method");
-
-  int pin = data["pin"];
-  bool enabled = data["enabled"];
-
-  return RPC_Response(data["pin"], (bool)data["enabled"]);
-}
-
-// RPC handlers
-RPC_Callback callbacks[] = {
-  { "setValue",         processDelayChange },
-  { "getValue",         processGetDelay },
-  { "setGpioStatus",    processSetGpioState },
-};
-*/
 // Setup an application
 void setup() {//-----------------------------------------------------------------SETUP---------------------------------------------
   // Initialize serial for debugging
@@ -273,7 +212,7 @@ void loop() {
 
   // Reconnect to ThingsBoard, if needed
   if (!tb.connected()) {
-    subscribed = false;
+//    subscribed = false;
 
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
@@ -284,19 +223,6 @@ void loop() {
       Serial.println("Failed to connect");
       return;
     }
-  }
-
-  // Subscribe for RPC, if needed
-  if (!subscribed) {
-    Serial.println("Subscribing for RPC...");
-    // Perform a subscription. All consequent data processing will happen in
-    // callbacks as denoted by callbacks[] array.
-    if (!tb.RPC_Subscribe(callbacks, COUNT_OF(callbacks))) {
-      Serial.println("Failed to subscribe for RPC");
-      return;
-    }
-    Serial.println("Subscribe done");
-    subscribed = true;
   }
     
   duration = pulseIn(dust, LOW);
@@ -351,7 +277,7 @@ void loop() {
       Serial.println("LOUD NOISES SENSOR");
       tb.sendTelemetryFloat("Loudness", val);
       
-      if (val > 750) //Valor arbitrario
+      if (val > 500) //Valor arbitrario
       {
         digitalWrite (GreenLed, HIGH);
         Serial.println("LOUD NOISES!!!");
@@ -504,18 +430,18 @@ void func_Matrix_LED( void * pvParameters ){ //CAMBIAR VALORES------------------
       }
     }
     
-    if(v.CO2eq > 1000){
+    if(v.CO2eq > 50){
       exclamationBlinkMatrix(3);
       stringo = "Niveles de CO2 altos ";
       StringWarningsMatrix(stringo);
       StringWarningsMatrix("Abrir ventanas ");
     }
-    if(val > 750){ //val variable del sonido
+    if(val > 500){ //val variable del sonido
       exclamationBlinkMatrix(1);
       stringo = "Mucho ruido ";
       StringWarningsMatrix(stringo);
     }
-    if(concentration > 8000){
+    if(concentration > 18000){
       stringo = "Concentracion de polvo alta ";
       StringWarningsMatrix(stringo);
     }
