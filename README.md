@@ -1,5 +1,5 @@
 # SBC20G4-COVID
-Sistema de control de aforo y calidad de aire para el control de vectores de contagio por COVID19 en las aulas.
+Sistema de control de calidad de aire para el control de vectores de contagio por COVID19 en las aulas.
 
 Proyecto realizado con una placa ESP32 DevKit V2 en el Arduino IDE y conectado a Thingsboard.
 
